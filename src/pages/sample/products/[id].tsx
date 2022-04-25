@@ -37,10 +37,11 @@ export const getStaticProps: GetStaticProps<TProps, TParams> = async ({ params }
 
 // SSGにはPathを指定する必要もある
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const req = await fetch(`${process.env.NEXT_PUBLIC_HOST}/products.json`);
-  const data: ["smartPhone", "pc", "headPhone"] = await req.json();
-
+export const getStaticPaths: GetStaticPaths = /* async  */ () => {
+  // const req = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/products/products`);
+  // const req = await fetch(`${process.env.NEXT_PUBLIC_HOST}/products/products`);
+  // const data: ["pc", "headPhone"] = await req.json();
+  const data = ["pc", "headphone", "smartphone"];
   const paths = data.map((product) => {
     return {
       params: {
@@ -76,7 +77,7 @@ const Product: React.FC<TProps> = ({ product }) => {
     <div className=" text-center">
       <main className=" p-5">
         <h2 className=" text-2xl">{id}のページです</h2>
-        <Image src={product.image} width={300} height={400} />
+        {product.image && <Image src={product.image} width={300} height={400} />}
         <p>{product.name}</p>
         <Link href="../products">商品一覧へ</Link>
       </main>
