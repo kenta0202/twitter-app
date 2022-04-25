@@ -25,7 +25,7 @@ type TProps = {
 export const getStaticProps: GetStaticProps<TProps, TParams> = async ({ params }) => {
   // ビルド時にデータを取得
   const req = await fetch(`${process.env.NEXT_PUBLIC_HOST}/${params.id}.json`);
-  const data: TItem = await req.json();
+  const data = await req.json();
   console.log(data);
 
   return {
