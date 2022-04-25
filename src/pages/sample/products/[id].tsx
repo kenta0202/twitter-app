@@ -24,7 +24,7 @@ type TProps = {
 // SSGの場合
 export const getStaticProps: GetStaticProps<TProps, TParams> = async ({ params }) => {
   // ビルド時にデータを取得
-  const req = await fetch(`${process.env.HOST}/${params.id}.json`);
+  const req = await fetch(`${process.env.NEXT_PUBLIC_HOST}/${params.id}.json`);
   const data: TItem = await req.json();
   console.log(data);
 
@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps<TProps, TParams> = async ({ params }
 // SSGにはPathを指定する必要もある
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const req = await fetch(`${process.env.HOST}/products.json`);
+  const req = await fetch(`${process.env.NEXT_PUBLIC_HOST}/products.json`);
   const data: ["smartPhone", "pc", "headPhone"] = await req.json();
 
   const paths = data.map((product) => {
