@@ -1,7 +1,13 @@
 module.exports = {
   images: {
     //使用する外部ドメインを設定
-    domains: ["links.papareact.com", "images.unsplash.com", "image.tmdb.org", "rb.gy"],
+    domains: [
+      "links.papareact.com",
+      "images.unsplash.com",
+      "image.tmdb.org",
+      "rb.gy",
+      "placehold.jp",
+    ],
     experimental: {
       optimizeFonts: true,
     },
