@@ -40,13 +40,13 @@ module.exports = {
     // "plugin:import/errors",
     // "plugin:import/warnings",
     // "plugin:import/typescript",
-    "plugin:@typescript-eslint/recommended",
+    // "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:react/jsx-runtime",
   ],
   rules: {
     "react/react-in-jsx-scope": "off", //import Reactしなくてもいい
-
+    "no-unused-vars": "off",
     //     "linebreak-style": 0,
     //     "react/function-component-definition": [
     //       2,

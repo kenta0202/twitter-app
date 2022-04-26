@@ -12,7 +12,7 @@ const MyApp = ({ Component, pageProps }) => {
   // Q: AppProps型がつくとgetLayoutがはじかれる
   return (
     <>
-      <HeadInformation />
+      <HeadInformation title="Twitter" />
       {getLayout(<Component {...pageProps} />)}
       {/*
        Name.getLayout = function getLayout(page) {
